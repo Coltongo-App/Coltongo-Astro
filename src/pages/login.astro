@@ -1,14 +1,27 @@
 ---
+import BangoName from '../components/BangoName';
 import Layout from '../layouts/Layout.astro';
-import Hola from '../components/Hola'
+
 /* scripts */
-const name = 'sharon'
+
 
 ---
 
 
 
-<Layout>
-  <h1>{name}</h1>
-  <Hola />
+<Layout >
+  <BangoName />
+  <form action="/">
+    <div>
+      <label for="userField">Usuario</label>
+    <input type="text" name="userField" id="userField" placeholder="sharonina">
+    </div>
+    <div class="flex flex-col">
+      <label for="passwordField">Contraseña</label>
+    <input type="text" name="passwordField" id="passwordField" placeholder="********">
+    </div>
+    <input type="submit" value="INICIAR SESIÓN" >
+  </form>
+  <p>¿Aún no tienes cuenta? <a href="/sign-up">Registrate</a></p>
+  <a href="/forgot-password">Olvidé mi Contraseña</a>
 </Layout>
