@@ -14,6 +14,12 @@ export const POST: APIRoute = async ({ request, redirect, cookies }) => {
 
   const data = await response.json();
 
+  console.log(response.status);
+
+  if (response.status !== 200 || !data.token) {
+    return redirect("/login?error=invalid_credentials");
+  }
+
   const { token, userId, expires } = data;
 
   cookies.set("access-token", token, {
