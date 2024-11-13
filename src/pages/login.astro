@@ -1,0 +1,30 @@
+---
+import BangoName from '../components/BangoName';
+import Layout from '../layouts/Layout.astro';
+
+/* scripts */
+
+
+---
+
+
+
+<Layout>
+  <section class="bg-turquoiseShades w-screen h-screen flex flex-col items-center justify-center">
+    <BangoName size="large" />
+    <form action="/" class="w-80 mt-16">
+      <div class="flex flex-col">
+        <label for="userField" class="mb-2 text-periwinkleBlue-50 uppercase tracking-wider text-base font-base">Usuario</label>
+        <input class="mb-7 pt-2.5 px-2.5 pb-.5 bg-transparent border-b border-vistaWhite-50 text-base font-base text-vistaWhite-300 focus-visible:outline-none focus-visible:border-b focus-visible:border-periwinkleBlue-50" type="text" name="userField" id="userField" placeholder="sharonina">
+      </div>
+      <div class="flex flex-col">
+        <label for="passwordField" class="mt-4 mb-2 text-periwinkleBlue-50 uppercase tracking-wider text-base font-base">Contraseña</label>
+        <input class="mb-7 pt-2.5 px-2.5 pb-.5 bg-transparent border-b border-vistaWhite-50 text-base font-base text-vistaWhite-300 focus-visible:outline-none focus-visible:border-b focus-visible:border-periwinkleBlue-50" type="text" name="passwordField" id="passwordField" placeholder="********">
+      </div>
+      <input style="border-image: linear-gradient(to right, #2EDAC1, #C5FF95) 1;" class="mt-8 mb-10 rounded text-base font-base uppercase tracking-wider text-sandyYellow-300 cursor-pointer w-full py-4 border" type="submit" value="INICIAR SESIÓN" >
+    </form>
+    <p class="text-vistaWhite-50 uppercase font-base text-sm tracking-wide">¿Aún no tienes cuenta? <a class="cursor-pointer text-periwinkleBlue-50 hover:text-periwinkleBlue-600" href="/sign-up">Registrate</a></p>
+    <a class="mt-2 uppercase font-base text-sm tracking-wide cursor-pointer text-periwinkleBlue-50 hover:text-periwinkleBlue-600" href="/forgot-password">Olvidé mi Contraseña</a>
+  </section>
+
+</Layout>
