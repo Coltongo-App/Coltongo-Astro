@@ -1,14 +1,16 @@
 ---
 import BangoName from '../components/BangoName';
+import LoaderBoxes from '../components/utils/LoaderBoxes.astro';
 import Layout from '../layouts/Layout.astro';
 
 const error = Astro.url.searchParams.get('error');
 ---
 
 <Layout>
-  <section class="bg-turquoiseShades w-screen h-screen flex flex-col items-center justify-center">
+  <section class="bg-turquoise-image-gradient h-screen w-full w-screen h-screen flex flex-col items-center justify-center">
     <BangoName size="large" />
     <p class="mt-4 mb-2 text-periwinkleBlue-50 uppercase tracking-wider text-base font-base">EL BANCO OFICIAL DE COLTONGO</p>
+    <LoaderBoxes />
   </section>
 </Layout>
 
