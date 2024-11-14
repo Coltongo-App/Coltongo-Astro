@@ -1,27 +1,33 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-const {cookies, redirect} = Astro;
+const { cookies, redirect } = Astro;
 
-const session = cookies.get('access-token');
+const session = cookies.get("access-token");
 
 if (!session) {
-	return redirect('/login');
+  return redirect("/login");
 }
 ---
 
 <Layout>
-	<h1 class="text-4xl font-bold">Coltongo</h1>
-	<p class="text-lg">
-		Coltongo, el mundo de minecraft que siempre soñaste.
-	</p>
-	{session.value}
-	{session.value ? <p class="text-lg">
-		<form action="/api/logout" method="post">
-			<button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-				Logout
-			</button>
-		</form>
-	</p> : <p>Not logged in</p>}
-	
+  <h1 class="text-4xl font-bold">Coltongo</h1>
+  <p class="text-lg">Coltongo, el mundo de minecraft que siempre soñaste.</p>
+  {session.value}
+  {
+    session.value ? (
+      <p class="text-lg">
+        <form action="/api/logout" method="post">
+          <button
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Logout
+          </button>
+        </form>
+      </p>
+    ) : (
+      <p>Not logged in</p>
+    )
+  }
 </Layout>
