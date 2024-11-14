@@ -11,15 +11,8 @@ const error = Astro.url.searchParams.get("error");
   >
     <BangoName size="large" />
 
-    {
-      error && (
-        <p class="text-vistaWhite-50 uppercase font-base text-sm tracking-wide mt-4 px-4 py-3 bg-red-500 text-center font-bold rounded">
-          Usuario o contraseña incorrectos. Intenta de nuevo.
-        </p>
-      )
-    }
+    <form action="/api/login" method="post" class="w-80 mt-14">
 
-    <form action="/api/login" method="post" class="w-80 mt-4">
       <div class="flex flex-col">
         <label
           for="userField"
@@ -50,22 +43,17 @@ const error = Astro.url.searchParams.get("error");
           required
         />
       </div>
-      <input
-        style="border-image: linear-gradient(to right, #2EDAC1, #C5FF95) 1;"
-        class="mt-8 mb-10 rounded text-base font-base uppercase tracking-wider text-sandyYellow-300 cursor-pointer w-full py-4 border"
-        type="submit"
-        value="INICIAR SESIÓN"
-      />
-    </form>
 
-    <p class="text-vistaWhite-50 uppercase font-base text-sm tracking-wide">
-      ¿Aún no tienes cuenta?
-      <a
-        class="cursor-pointer text-periwinkleBlue-50 hover:text-periwinkleBlue-600"
-        href="/sign-up"
-      >
-        Registrate</a
-      >
+      {error && (
+            <p class=" text-vistaWhite-50 uppercase font-base text-xs tracking-wide mt-4  py-3 text-center rounded bg-pinkSherbet-600">
+              Usuario o contraseña incorrectos. <br>Intenta de nuevo.
+            </p>
+      )}
+      <input style="border-image: linear-gradient(to right, #2EDAC1, #C5FF95) 1;" class="mt-8 mb-10 rounded text-base font-base uppercase tracking-wider text-sandyYellow-300 cursor-pointer w-full py-4 border" type="submit" value="INICIAR SESIÓN">
+    </form>
+    <p class="text-vistaWhite-50 uppercase font-base text-sm tracking-wide">¿Aún no tienes cuenta?
+      <a class="cursor-pointer text-periwinkleBlue-50 hover:text-periwinkleBlue-600" href="/sign-up"> Registrate</a>
+
     </p>
     <a
       class="mt-2 uppercase font-base text-sm tracking-wide cursor-pointer text-periwinkleBlue-50 hover:text-periwinkleBlue-600"

@@ -1,1 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .bg-turquoise-image-gradient {
+    background-image: 
+      linear-gradient(to top, rgba(0, 44, 82, 0.95), rgba(22, 121, 171, 0.95)),
+      url('./src/assets/loading-l.png');
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+
